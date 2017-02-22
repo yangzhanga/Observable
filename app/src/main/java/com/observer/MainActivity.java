@@ -1,8 +1,11 @@
 package com.observer;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.*;
 
@@ -20,11 +23,20 @@ import java.util.*;
  *  通知方法就是performClick；而OnClickListener就是观察者。只不过这里的只能注册一个观察对象而已。
  */
 public class MainActivity extends AppCompatActivity implements ObserverListener{
+    private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        btn= (Button) findViewById(R.id.btn_main);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this,SecondActivity.class);
+                startActivity(intent);
+            }
+        });
         //注册被观察者
         MyObservable.getInstance().register(this);
 
