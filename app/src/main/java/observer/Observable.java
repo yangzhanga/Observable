@@ -1,4 +1,4 @@
-package com.observer;
+package observer;
 
 /**
  *

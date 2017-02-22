@@ -1,4 +1,4 @@
-package com.observer;
+package observer;
 
 /**
  * 观察者接口定义

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import observer.MyObservable;
+
 /**
  * Created by zhangyang on 17/2/22.
  */

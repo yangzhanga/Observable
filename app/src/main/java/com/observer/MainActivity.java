@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.*;
+import observer.MyObservable;
+import observer.ObserverListener;
 
 /**
  * 回调函数与观察者模式
@@ -23,7 +24,7 @@ import java.util.*;
  *  这里我们的被观察者就是View，他的注册方法（register）就是setOnClickListener(),
  *  通知方法就是performClick；而OnClickListener就是观察者。只不过这里的只能注册一个观察对象而已。
  */
-public class MainActivity extends AppCompatActivity implements ObserverListener{
+public class MainActivity extends AppCompatActivity implements ObserverListener {
     private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
