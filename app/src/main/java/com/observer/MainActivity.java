@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.*;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements ObserverListener{
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent();
+                MyObservable.getInstance().notifyObserverListener("进入SecondActivity");
                 intent.setClass(MainActivity.this,SecondActivity.class);
                 startActivity(intent);
             }
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements ObserverListener{
         //注册被观察者
         MyObservable.getInstance().register(this);
 
-        MyObservable.getInstance().notifyObserverListener("更新提醒信息");
+
     }
 
     @Override
@@ -56,5 +58,6 @@ public class MainActivity extends AppCompatActivity implements ObserverListener{
     @Override
     public void receive(String message) {
         Log.e("aaa",message+"");
+        Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT).show();
     }
 }

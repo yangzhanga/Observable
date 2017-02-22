@@ -10,7 +10,7 @@ import java.util.List;
  * Created by zhangyang on 17/2/22.
  */
 
-public class MyObservable implements Observable {
+public  class MyObservable implements Observable {
 
     private List<ObserverListener> mObserverListeners;
     private static MyObservable mMyObservable;

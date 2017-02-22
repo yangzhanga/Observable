@@ -19,6 +19,7 @@ public class SecondActivity extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //注册被观察者
                 MyObservable.getInstance().notifyObserverListener("SecondActivity触发");
             }
         });
